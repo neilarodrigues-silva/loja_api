@@ -41,26 +41,32 @@ public class Compra {
 	}
 
 	public Long getId() {
+
 		return id;
 	}
 
 	public void setId(Long id) {
+
 		this.id = id;
 	}
 
 	public Filial getFilial() {
+
 		return filial;
 	}
 
 	public void setFilial(Filial filial) {
+
 		this.filial = filial;
 	}
 
 	public Fornecedor getFornecedor() {
+
 		return fornecedor;
 	}
 
 	public void setFornecedor(Fornecedor fornecedor) {
+
 		this.fornecedor = fornecedor;
 	}
 

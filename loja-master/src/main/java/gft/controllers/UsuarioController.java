@@ -1,6 +1,7 @@
 package gft.controllers;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +22,8 @@ public class UsuarioController {
 	public UsuarioController(UsuarioService usuarioService) {
 		this.usuarioService = usuarioService;
 	}
-	
+
+
 	@PostMapping
 	public ResponseEntity<ConsultaUsuarioDTO> salvarUsuario(@RequestBody RegistroUsuarioDTO dto){
 			
@@ -30,7 +32,9 @@ public class UsuarioController {
 			return ResponseEntity.ok(UsuarioMapper.fromEntity(usuario));
 			
 	}
-
-	
+	public static void main(String args[]) {
+		BCryptPasswordEncoder b = new BCryptPasswordEncoder();
+		System.out.println(b.encode("1234"));
+	}
 	
 }

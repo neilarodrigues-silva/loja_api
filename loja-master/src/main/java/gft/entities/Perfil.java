@@ -6,50 +6,39 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "tb_perfil")
-public class Perfil implements GrantedAuthority{
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class Perfil implements GrantedAuthority {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	private String nome;
+    private static final long serialVersionUID = 1L;
 
-	public Perfil() {
-		
-	}
-	
-	public Perfil(Long id) {
-		this.id = id;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	public Long getId() {
-		return id;
-	}
+    private String nome;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public Perfil() {
 
-	public String getNome() {
-		return nome;
-	}
+    }
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    public Perfil(Long id) {
+        this.id = id;
+    }
 
-	@Override
-	public String getAuthority() {
-		return getNome();
-	}
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    @Override
+    public String getAuthority() {
+        return getNome();
+    }
 
 }
